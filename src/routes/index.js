@@ -13,6 +13,5 @@ export default function Root() {
                 <Route exact path="/test" element={<Test />} />
             </Routes>
         </BrowserRouter>
-
     )
 }
