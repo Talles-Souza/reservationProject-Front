@@ -8,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export function Header() {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" style={{ backgroundColor: "#7D7E81" }}>
             <Container style={{ justifyContent: 'center' }}>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center" style={{ justifyContent: 'center' }}>
