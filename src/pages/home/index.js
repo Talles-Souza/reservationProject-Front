@@ -1,11 +1,17 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import BasicCard from "../../components/cardsHome";
+import { ModalSingIn } from "../../components/modalLogin";
+
 import "./style.css";
 
 function Home() {
 
     const history = useNavigate();
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
 
     return (
         <>
@@ -15,18 +21,22 @@ function Home() {
                         <BasicCard /> <BasicCard /></div>
                 </div>
                 <div className="rightButtons">
-                    <div className="fixedButton1" onClick={() => history("/test")}>
-                        <text>teste1</text>
+                    <div className="fixedButton1" tabIndex="1" onClick={() => setOpen(true)}>
+                        <text>login</text>
                     </div>
-                    <div className="fixedButton2" onClick={() => history("/test")}>
-                        <text>teste2</text>
+                    <div className="fixedButton2" tabIndex="1" onClick={() => history("/test")}>
+                        <text>inscreva-se</text>
                     </div>
-                    <div className="fixedButton3" onClick={() => history("/test")}>
-                        <text>teste3</text>
+                    <div className="fixedButton3" tabIndex="1" onClick={() => history("/test")}>
+                        <text>ajuda</text>
                     </div>
                 </div>
                 <footer></footer>
             </div>
+            <ModalSingIn
+                show={open}
+                onHide={() => setOpen(false)}
+            />
 
             {/* <div className="footer"></div> */}
         </>

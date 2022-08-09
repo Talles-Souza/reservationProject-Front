@@ -48,6 +48,8 @@
     right: 20px; 
     gap: 13px;
     cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
     color: white; 
     align-items: center;
     justify-content: end;
