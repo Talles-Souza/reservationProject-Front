@@ -1,40 +1,93 @@
-/* * {
-    box-sizing: border-box;
-  } */
+/*-------------FULL------------*/
+* {
+    padding: 0;
+    margin: 0;
+  }
 
 .global{
     height: 100vh;
     /* height: auto; */
     width: 100%;
-    background-color: wheat;
+    background-color: #7D7E81;
 }
+/*-------------AREA PRINCIPAL------------*/
 
-.container{
+  .container{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-wrap: wrap;
-    /* padding-bottom: 20vh; */
-   
+    flex-wrap: wrap;    
+    background-color: rgb(120, 20, 20);
+   padding-bottom: 20vh;  
 }
-/* @media only screen and (width: 1440px) {
-    .container {
-    width: 100%; background-size: cover;    background-position: center center;
-    }
-    } */
-.bg{
+
+/*-------------AREA DOS CARDS------------*/
+
+.cardsArea{
     width: 100%;
-    height: 100%;
-    background-image: url(../../assets/img/background.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    height: 50%;
+    align-self:flex-end;
+    justify-content: center;
+    gap:10%;
+    display: flex;
+    flex-wrap: wrap; 
+    background-color: rgb(63, 63, 63);
+}  
+
+/*-------------BOTOES------------*/
+
+.rightButtons{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    min-width: 160px;
+    height: 30%;
+    max-height: 250px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px; 
+    gap: 13px;
+    cursor: pointer;
+    color: white; 
+    align-items: center;
+    justify-content: end;
+    text-align: center;
+
+}
+.fixedButton1{
+    /* position: fixed;
+    bottom: 20px;
+    right: 20px;  */
+    padding: 20px;
+    width: 100%;
+    height: 28%;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
 }
 
+.fixedButton2{
+    /* position: fixed;
+    bottom: 90px;
+    right: 20px;  */
+    padding: 20px;
+    width: 100%;
+    height: 28%;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+}
 
+.fixedButton3{
+    /* position: fixed;
+    bottom: 160px;
+    right: 20px;  */
+    padding: 20px;
+    width: 100%;
+    height: 28%;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+}
 
 footer{
     height: 20vh;
-    background-color: aqua;
+    background-color: rgb(111, 255, 0);
 }
