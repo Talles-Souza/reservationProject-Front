@@ -1,0 +1,29 @@
+img {
+    height: 10vh;
+}
+
+.buttonSingIn {
+    width: 80%;
+    height: 20%;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    top: 12px;
+    align-self: center;
+    justify-content: center;
+    color: #ffff;
+    background-color: black;
+}
+
+.forgetPassword{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    position: relative;
+    top: 12px;
+}
+
+button{
+    border: none;
+    background-color: #ffff;
+}
