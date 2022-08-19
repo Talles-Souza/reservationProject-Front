@@ -6,7 +6,8 @@ import "./style.css";
 import SpeedDial from '@mui/material/SpeedDial';
 import { Collapse, CardBody, Card } from 'reactstrap';
 import AddOutline from '@rsuite/icons/AddOutline';
-import { IoIosAdd } from 'react-icons/io';
+import { IoIosAdd, IoMdHelpCircleOutline } from 'react-icons/io';
+import { AiOutlineUserAdd, AiOutlineUser } from 'react-icons/ai';
 import { Animation, Button } from 'rsuite';
 
 
@@ -26,17 +27,26 @@ function Home(args) {
         <div
             {...props}
             ref={ref}
-            style={{ background: '#000', width: 100, height: 160, overflow: 'hidden', display: 'flex', gap: '13px', flexDirection: 'column', position: 'absolute', bottom: '80px', right: 16 }}
+            style={{ width: 100, height: 160, overflow: 'hidden', display: 'flex', gap: '13px', flexDirection: 'column', position: 'absolute', bottom: '80px', right: 16 }}
         >
-            <div className="fixedButton1"  onClick={() => setOpen(true)}>
-            <text>login</text>
+            <div className="fixedButton1" onClick={() => setOpen(true)}>
+                {/* <text  style={{color: 'white'}}>L</text> */}
+                <div className="icon">
+                    <AiOutlineUser />
+                </div>
+                <text>login</text>
             </div>
             <div className="fixedButton1" >
-            <text>inscreva-se</text>
-            
+                <div className="icon">
+                    <AiOutlineUserAdd />
+                </div>
+                <text>inscrever</text>
             </div>
             <div className="fixedButton1" >
-            <text>ajuda</text>            
+                <div className="icon">
+                    <IoMdHelpCircleOutline />
+                </div>
+                <text>ajuda</text>
             </div>
         </div>
     ));
@@ -61,23 +71,29 @@ function Home(args) {
                         <text>ajuda</text>
                     </div>
                 </div> */}
+                <div >
+                    <Button onClick={onChange} style={{ backgroundColor: "black", position: 'absolute', bottom: 16, right: '60px', height: '55px', borderRadius: '30px' }}><IoIosAdd style={{ fontSize: '30px', color: 'white' }} /></Button>
+                    <Animation.Bounce in={show}>
+                        {(props, ref) => <Panel {...props} ref={ref} />}
+                    </Animation.Bounce>
+                </div>
                 <footer></footer>
             </div>
-            <React.StrictMode>
-                {/* <Button color="primary" onClick={toggle} className="test">
+            {/* <React.StrictMode>
+                <Button color="primary" onClick={toggle} className="test">
                     Toggle
-                </Button> */}
+                </Button> 
 
-                {/* <SpeedDial
+                <SpeedDial
 
                     ariaLabel="SpeedDial basic example"
                     sx={{ position: 'absolute', bottom: 16, right: 16 }}
                     icon={<IoIosAdd style={{ backgroundColor: "black", fontSize: '56px', borderRadius: '30px' }} />}
                     onClick={toggle}
                     
-                > */}
+                >
 
-                    {/* <Collapse isOpen={isOpen} {...args} className="rightButtons">
+                    <Collapse isOpen={isOpen} {...args} className="rightButtons">
 
                         <div className="fixedButton1" tabIndex="1" onClick={() => setOpen(true)}>
                             <text>login</text>
@@ -89,24 +105,18 @@ function Home(args) {
                             <text>ajuda</text>
                         </div>
 
-                    </Collapse> */}
+                    </Collapse>
 
-                {/* </SpeedDial> */}
-            </React.StrictMode>
-            <div >
-                <Button onClick={onChange}  style={{ backgroundColor: "black",position: 'absolute', bottom: 16, right: 16,height:'55px', borderRadius: '30px' }}><IoIosAdd style={{fontSize: '30px' }}/></Button>
-                <hr />
-                <Animation.Bounce in={show}>
-                    {(props, ref) => <Panel {...props} ref={ref} />}
-                </Animation.Bounce>
-            </div>
+                </SpeedDial>
+            </React.StrictMode> */}
+
 
             <ModalSingIn
                 show={open}
                 onHide={() => setOpen(false)}
             />
 
-            {/* <div className="footer"></div> */}
+            <div className="footer"></div>
         </>
     );
 }

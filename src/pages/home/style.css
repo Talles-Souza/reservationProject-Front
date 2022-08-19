@@ -55,6 +55,14 @@ text:hover{
     overflow: visible;
 
 } */
+
+span{
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+  overflow: hidden;
+  transition: all .5s;
+}
 .rightButtons{
     display: flex;
     flex-direction: column;
@@ -80,23 +88,54 @@ text:hover{
     /* position: fixed;
     bottom: 20px;
     right: 20px;  */
+    display: flex;
     padding: 8px;
-    width: 40%;
+    width: 45%;
     height: 20%;
+    gap: 8px;
     align-items: center;
-    justify-content: end;
+    justify-content: left;
     border-radius: 50px;
     transition: width 2s;
+    
     cursor: pointer;
-    overflow: hidden; 
+    font-size: small;
     white-space: nowrap; 
-    background-color: rgb(86, 29, 29);
+    color: #ffff;
+    background-color: #000000;
+
+}
+text{
+  width: 100%;
+  text-overflow: clip;
+  overflow: hidden;
 
 }
 
-.fixedButton1:hover{
+text:hover{
+  color: #ffff;
+  text-overflow: initial;
+  overflow:visible;
+  transition: visible 1s ;
+
+
+}
+
+ .fixedButton1:hover{
     width: 100%;
-    overflow: visible;
+    color: antiquewhite;
+
+} 
+
+.icon{
+  font-size: 20px;
+  overflow: visible;
+  display: flex;
+
+}
+
+.icon:hover{
+  overflow: hidden; 
 
 }
 
