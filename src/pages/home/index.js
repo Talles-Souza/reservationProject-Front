@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BasicCard from "../../components/cardsHome";
 import { ModalSingIn } from "../../components/modalLogin";
+import { ModalSingUp } from "../../components/modalRegister";
 import "./style.css";
 import SpeedDial from '@mui/material/SpeedDial';
 import { Collapse, CardBody, Card } from 'reactstrap';
@@ -9,20 +10,26 @@ import AddOutline from '@rsuite/icons/AddOutline';
 import { IoIosAdd, IoMdHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineUserAdd, AiOutlineUser } from 'react-icons/ai';
 import { Animation, Button } from 'rsuite';
+import { Modal, ButtonToolbar, Placeholder } from 'rsuite';
 
 
-function Home(args) {
+
+function Home(args, props) {
 
     const history = useNavigate();
     const [open, setOpen] = React.useState(false);
     // const [isPageSelected, setPageSelected] = useState(false)
+
+    const [abrir, setAbrir] = React.useState(false);
+    const handleOpen = () => setAbrir(true);
+    const handleClose = () => setAbrir(false);
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
     const [show, setShow] = React.useState(true);
     const onChange = () => setShow(!show);
-    // const handleOpen = () => setOpen(true);
-    // const handleClose = () => setOpen(false);
+
     const Panel = React.forwardRef((props, ref) => (
         <div
             {...props}
@@ -36,7 +43,7 @@ function Home(args) {
                 </div>
                 <text>login</text>
             </div>
-            <div className="fixedButton1" >
+            <div className="fixedButton1" onClick={() => setAbrir(true)}>
                 <div className="icon">
                     <AiOutlineUserAdd />
                 </div>
@@ -115,6 +122,11 @@ function Home(args) {
                 show={open}
                 onHide={() => setOpen(false)}
             />
+            <ModalSingUp
+                {...props} open={abrir} onClose={handleClose}
+            />
+           
+
 
             <div className="footer"></div>
         </>

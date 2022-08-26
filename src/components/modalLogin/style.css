@@ -9,6 +9,8 @@ img {
     display: flex;
     position: relative;
     top: 12px;
+    text-align: center;
+    cursor: pointer;
     align-self: center;
     justify-content: center;
     color: #ffff;
@@ -21,9 +23,18 @@ img {
     justify-content: center;
     position: relative;
     top: 12px;
+    cursor: pointer;
 }
 
 button{
     border: none;
     background-color: #ffff;
+}
+
+.backButton{
+    display: flex;
+    position: relative;
+    top: 15px;
+    left: 28px;
+    cursor: pointer;
 }

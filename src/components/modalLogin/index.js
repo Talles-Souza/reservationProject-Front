@@ -105,6 +105,9 @@ export const ModalSingIn = (props) => {
                 <div className='buttonSingIn'>
                         <text>Recuperar</text>
                 </div>
+                <div className='backButton'>
+                <button onClick={e => setSteps( 0)}>Voltar</button>
+                </div>
 
             </Modal.Body>  : <div></div>}
             <Modal.Footer>
