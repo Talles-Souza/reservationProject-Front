@@ -4,13 +4,9 @@ import BasicCard from "../../components/cardsHome";
 import { ModalSingIn } from "../../components/modalLogin";
 import { ModalSingUp } from "../../components/modalRegister";
 import "./style.css";
-import SpeedDial from '@mui/material/SpeedDial';
-import { Collapse, CardBody, Card } from 'reactstrap';
-import AddOutline from '@rsuite/icons/AddOutline';
 import { IoIosAdd, IoMdHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineUserAdd, AiOutlineUser } from 'react-icons/ai';
 import { Animation, Button } from 'rsuite';
-import { Modal, ButtonToolbar, Placeholder } from 'rsuite';
 
 
 
@@ -21,8 +17,6 @@ function Home(args, props) {
     // const [isPageSelected, setPageSelected] = useState(false)
 
     const [abrir, setAbrir] = React.useState(false);
-    const handleOpen = () => setAbrir(true);
-    const handleClose = () => setAbrir(false);
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
@@ -117,13 +111,13 @@ function Home(args, props) {
                 </SpeedDial>
             </React.StrictMode> */}
 
-
             <ModalSingIn
                 show={open}
                 onHide={() => setOpen(false)}
             />
             <ModalSingUp
-                {...props} open={abrir} onClose={handleClose}
+                open={abrir} 
+                onClose={() => setAbrir(false)}
             />
            
 
