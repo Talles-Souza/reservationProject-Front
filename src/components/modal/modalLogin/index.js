@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Logo from "../../assets/img/logo.jpg"
+import Logo from "../../../assets/img/logo.jpg"
 import Box from '@mui/material/Box';
 import Input from '@mui/material/Input';
 import InputAdornment from '@mui/material/InputAdornment';

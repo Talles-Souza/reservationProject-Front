@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from "../../assets/img/logo.jpg";
+import Logo from "../../../assets/img/logo.jpg"
 import Box from '@mui/material/Box';
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -11,7 +11,7 @@ import TextField from '@mui/material/TextField';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { Modal } from 'rsuite';
+import Modal from 'react-bootstrap/Modal';
 import "./style.css";
 
 export const ModalSingUp = (props) => {
@@ -86,13 +86,17 @@ export const ModalSingUp = (props) => {
 
     return (
         <>
-            <Modal  {...props} size="xs" style={{display: "flex", justifyContent: "center", alignItems: 'center' }}>
-                <Modal.Header>
-                    <Modal.Title style={{ display: "flex", alignItems: "center", justifyContent: "center", position: "relative", top: "7px" }} id="contained-modal-title-vcenter">
-                        <img src={Logo} />
-                    </Modal.Title>
-                </Modal.Header>
-                <Modal.Body style={{ display: "flex", justifyContent: "center", alignItems: 'center', gap: '10px', flexDirection:"column" }}>
+            <Modal
+                {...props}
+                size="sm"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+               <Modal.Header closeButton> </Modal.Header>
+            <Modal.Title style={{ display: "flex", alignItems: "center", justifyContent: "center",  position: "relative", top:"7px" }} id="contained-modal-title-vcenter">
+                <img src={Logo}  />
+            </Modal.Title>
+                <Modal.Body style={{ display: "flex", justifyContent: "center", alignItems: 'center', gap: '10px', flexDirection: "column" }}>
 
                     <Box sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: "center", width: "100%" }}>
                         {/* <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} /> */}

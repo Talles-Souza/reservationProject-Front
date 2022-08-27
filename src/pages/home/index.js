@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BasicCard from "../../components/cardsHome";
-import { ModalSingIn } from "../../components/modalLogin";
-import { ModalSingUp } from "../../components/modalRegister";
+import { ModalSingIn } from "../../components/modal/modalLogin";
+import { ModalSingUp } from "../../components/modal/modalRegister";
 import "./style.css";
 import { IoIosAdd, IoMdHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineUserAdd, AiOutlineUser } from 'react-icons/ai';
@@ -116,8 +116,8 @@ function Home(args, props) {
                 onHide={() => setOpen(false)}
             />
             <ModalSingUp
-                open={abrir} 
-                onClose={() => setAbrir(false)}
+                show={abrir} 
+                onHide={() => setAbrir(false)}
             />
            
 
