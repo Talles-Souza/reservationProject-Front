@@ -17,13 +17,6 @@ export const ModalSingIn = (props) => {
     const [steps, setSteps] = useState(0)
     const [isClosed, setClosed] = useState(false)
 
-    // function handleClickCloseModal () {
-    //     if (isClosed === true) {
-    //         steps(e => 0)
-    //     }
-    //     setClosed(true)
-    //     }
-
     const [values, setValues] = React.useState({
         password: '',
         showPassword: false,
@@ -59,7 +52,7 @@ export const ModalSingIn = (props) => {
                 <img src={Logo}  />
             </Modal.Title>
 
-            {steps === 0 ? <Modal.Body style={{display: "flex", justifyContent: "center", flexDirection:"column"}}>
+            {steps === 0 ? <Modal.Body style={{display: "flex", justifyContent: "center", gap: '10px', flexDirection:"column"}}>
                 <Box sx={{ display: 'flex', alignItems: 'flex-end', justifyContent: "center", width: "100%" }}>
                     {/* <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5 }} /> */}
                     <TextField id="input-with-sx" label="Email" variant="standard" sx={{ width: '80%' }} />

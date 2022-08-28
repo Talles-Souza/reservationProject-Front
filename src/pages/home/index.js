@@ -3,24 +3,26 @@ import { useNavigate } from "react-router-dom";
 import BasicCard from "../../components/cardsHome";
 import { ModalSingIn } from "../../components/modal/modalLogin";
 import { ModalSingUp } from "../../components/modal/modalRegister";
+import { HelpModal } from "../../components/modal/modalHelp";
 import "./style.css";
 import { IoIosAdd, IoMdHelpCircleOutline } from 'react-icons/io';
 import { AiOutlineUserAdd, AiOutlineUser } from 'react-icons/ai';
 import { Animation, Button } from 'rsuite';
 
-
-
 function Home(args, props) {
 
     const history = useNavigate();
+
+    //modal de login
     const [open, setOpen] = React.useState(false);
-    // const [isPageSelected, setPageSelected] = useState(false)
 
-    const [abrir, setAbrir] = React.useState(false);
+    //modal de registro
+    const [showModal, setShowModal] = React.useState(false);
 
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => setIsOpen(!isOpen);
+    //modal de ajuda
+    const [openModal, setOpenModal] = React.useState(false);
 
+    //animação do botão
     const [show, setShow] = React.useState(true);
     const onChange = () => setShow(!show);
 
@@ -37,13 +39,13 @@ function Home(args, props) {
                 </div>
                 <text>login</text>
             </div>
-            <div className="fixedButton1" onClick={() => setAbrir(true)}>
+            <div className="fixedButton1" onClick={() => setShowModal(true)}>
                 <div className="icon">
                     <AiOutlineUserAdd />
                 </div>
                 <text>inscrever</text>
             </div>
-            <div className="fixedButton1" >
+            <div className="fixedButton1" onClick={() => setOpenModal(true)}>
                 <div className="icon">
                     <IoMdHelpCircleOutline />
                 </div>
@@ -55,7 +57,6 @@ function Home(args, props) {
 
     return (
         <>
-
             <div className="global">
                 <div className="container">
                     <div className="cardsArea">
@@ -84,16 +85,12 @@ function Home(args, props) {
                 <Button color="primary" onClick={toggle} className="test">
                     Toggle
                 </Button> 
-
                 <SpeedDial
-
                     ariaLabel="SpeedDial basic example"
                     sx={{ position: 'absolute', bottom: 16, right: 16 }}
                     icon={<IoIosAdd style={{ backgroundColor: "black", fontSize: '56px', borderRadius: '30px' }} />}
-                    onClick={toggle}
-                    
+                    onClick={toggle}   
                 >
-
                     <Collapse isOpen={isOpen} {...args} className="rightButtons">
 
                         <div className="fixedButton1" tabIndex="1" onClick={() => setOpen(true)}>
@@ -107,7 +104,6 @@ function Home(args, props) {
                         </div>
 
                     </Collapse>
-
                 </SpeedDial>
             </React.StrictMode> */}
 
@@ -116,11 +112,14 @@ function Home(args, props) {
                 onHide={() => setOpen(false)}
             />
             <ModalSingUp
-                show={abrir} 
-                onHide={() => setAbrir(false)}
+                show={showModal} 
+                onHide={() => setShowModal(false)}
             />
-           
-
+            <HelpModal
+            {...props}
+                open={openModal} 
+                onClose={() => setOpenModal(false)}
+            />
 
             <div className="footer"></div>
         </>

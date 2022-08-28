@@ -63,8 +63,8 @@ export const ModalSingUp = (props) => {
                 .matches(/[ ][\p{Script=Latin}]+/gu, "Nome deve ser completo."),
 
             cpf: Yup.string()
-                .min(14)
-                .max(14)
+                 .min(14)
+                 .max(14)
                 .required(),
 
             email: Yup.string()
@@ -186,12 +186,6 @@ export const ModalSingUp = (props) => {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    {/* <Button  onClick={() => setAbrir(false)}appearance="primary">
-                        Ok
-                    </Button>
-                    <Button  onClick={() => setAbrir(false)} appearance="subtle">
-                        Cancel
-                    </Button> */}
                 </Modal.Footer>
             </Modal>
         </>
